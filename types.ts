@@ -16,9 +16,9 @@ export type ApplicationWindow = {
 
 export const availabilityTypes = [
   "closed",
-  "not opened",
+  "not-opened",
   "opened",
-  "not closed",
+  "not-closed",
 ] as const;
 
 export type Availability = (typeof availabilityTypes)[number];
@@ -114,8 +114,8 @@ export class Program {
       this.getTimeUntilWindowEnds(semester),
     ];
     if (tte <= 0) return "closed";
-    else if (tts === undefined) return "not closed";
-    else if (tts > 0) return "not opened";
+    else if (tts === undefined) return "not-closed";
+    else if (tts > 0) return "not-opened";
     else return "opened";
   };
 }

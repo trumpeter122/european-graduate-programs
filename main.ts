@@ -1,3 +1,4 @@
+import { parseArgs } from "util";
 import pc from "picocolors";
 
 import programs from "./programs";
@@ -20,8 +21,6 @@ const printProgram = (p: Program) => {
 
 const targetSemester = { season: "winter", startingYear: "2026" } as Semester;
 
-console.log(`${programs.length} programs in total`);
-
 type Choice = {
   availability?: Availability;
   status?: ApplicationStatus;
@@ -32,53 +31,35 @@ let choice: Choice = {
   status: undefined,
 };
 
-function parseChoice(input: string): Partial<Choice> {
-  const out: Partial<Choice> = {};
+const { values } = parseArgs({
+  args: Bun.argv.slice(2),
+  options: {
+    availability: {
+      type: "string",
+    },
+    status: {
+      type: "string",
+    },
+  },
+  strict: true,
+  allowPositionals: false,
+});
 
-  for (const part of input
-    .split(";")
-    .map((s) => s.trim())
-    .filter(Boolean)) {
-    const space = part.indexOf(" ");
-    const key = space === -1 ? part : part.slice(0, space);
-    const value =
-      space === -1 ? undefined : part.slice(space + 1).trim() || undefined;
-
-    switch (key) {
-      case "availability":
-        if (value === undefined) {
-          out.availability = undefined;
-        } else if (availabilityTypes.includes(value as Availability)) {
-          out.availability = value as Availability;
-        } else {
-          throw new Error(`Invalid availability: ${value}`);
-        }
-        break;
-
-      case "status":
-        if (value === undefined) {
-          out.status = undefined;
-        } else if (applicationStati.includes(value as ApplicationStatus)) {
-          out.status = value as ApplicationStatus;
-        } else {
-          throw new Error(`Invalid status: ${value}`);
-        }
-        break;
-
-      default:
-        throw new Error(`Unknown flag: ${key}`);
-    }
+if (values.availability !== undefined) {
+  if (availabilityTypes.includes(values.availability as Availability)) {
+    choice.availability = values.availability as Availability;
+  } else {
+    throw new Error(`Invalid availability: ${values.availability}`);
   }
-
-  return out;
 }
 
-const answer = prompt(":");
-if (answer === null) throw Error("No input");
-else {
-  choice = { ...choice, ...parseChoice(answer) };
+if (values.status !== undefined) {
+  if (applicationStati.includes(values.status as ApplicationStatus)) {
+    choice.status = values.status as ApplicationStatus;
+  } else {
+    throw new Error(`Invalid status: ${values.status}`);
+  }
 }
-console.clear();
 
 const selectedPrograms: Program[] = [...programs];
 
@@ -96,7 +77,9 @@ if (choice.status !== undefined) {
   selectedPrograms.splice(
     0,
     selectedPrograms.length,
-    ...selectedPrograms.filter((p) => p.applicationStatus === choice.status),
+    ...selectedPrograms.filter(
+      (p) => p.applicationStatus === choice.status,
+    ),
   );
 }
 
