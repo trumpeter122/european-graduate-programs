@@ -13,9 +13,15 @@ import {
 
 const printProgram = (p: Program) => {
   console.log(pc.red(`${p.name}\t\t${p.universityName}`));
-  console.log(`Start:\t${p.getDaysUntilWindowStarts(targetSemester)} days`);
-  console.log(`End:\t${p.getDaysUntilWindowEnds(targetSemester)} days`);
-  console.log(`Status:\t${p.applicationStatus}`);
+
+  const line = (label: string, value: string | number | undefined) => {
+    console.log(`${pc.cyan(label)}: ${value ?? "-"}`);
+  };
+
+  line("Specializations", p.specializations?.join(", "));
+  line("Start", `${p.getDaysUntilWindowStarts(targetSemester)} days`);
+  line("End", `${p.getDaysUntilWindowEnds(targetSemester)} days`);
+  line("Status", p.applicationStatus);
   console.log();
 };
 
@@ -26,7 +32,7 @@ type Choice = {
   status?: ApplicationStatus;
 };
 
-let choice: Choice = {
+const choice: Choice = {
   availability: undefined,
   status: undefined,
 };
@@ -77,9 +83,7 @@ if (choice.status !== undefined) {
   selectedPrograms.splice(
     0,
     selectedPrograms.length,
-    ...selectedPrograms.filter(
-      (p) => p.applicationStatus === choice.status,
-    ),
+    ...selectedPrograms.filter((p) => p.applicationStatus === choice.status),
   );
 }
 
