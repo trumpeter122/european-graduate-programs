@@ -2,6 +2,7 @@ import { Program } from "./types";
 
 // English-taught or English-only-applicable Master programs applied from outside of the EU
 // For fields like application windows, only information specific to that program is acceptd
+// specializations marked explicitly as German-only are ignored
 const programs = [
   new Program({
     name: "Computer Science",
@@ -15,6 +16,11 @@ const programs = [
         from: new Date(2025, 10, 15),
         to: new Date(2026, 0, 15),
       },
+    ],
+    specializations: [
+      "Autonomous Systems in Computer Science",
+      "Service Technology and Engineering",
+      "Visual Computing",
     ],
   }),
   new Program({
@@ -30,6 +36,11 @@ const programs = [
         to: new Date(2026, 6, 15),
       },
     ],
+    specializations: [
+      "Computer and Software Engineering",
+      "Intelligence Engineering",
+      "Mathematics",
+    ],
   }),
   new Program({
     name: "Computer Science",
@@ -43,6 +54,11 @@ const programs = [
         from: new Date(2026, 0, 1),
         to: new Date(2026, 3, 30),
       },
+    ],
+    specializations: [
+      "Embedded Systems",
+      "Visual Computing",
+      "Complex and Intelligent Software Systems",
     ],
     applicationStatus: "working",
   }),
@@ -58,6 +74,12 @@ const programs = [
         from: new Date(2026, 3, 15),
         to: new Date(2026, 4, 1),
       },
+    ],
+    specializations: [
+      "Algorithmics",
+      "Graphics/Vision/Audio",
+      "Information and Communication Management",
+      "Intelligent Systems",
     ],
   }),
   // https://www.tu-darmstadt.de/studieren/studieninteressierte/bewerbung_zulassung_tu/bewerbungsfristen/bachelor_studiengaenge_2/index.en.jsp
@@ -79,6 +101,11 @@ const programs = [
         to: new Date(2026, 4, 31),
       },
     ],
+    specializations: [
+      "Data Science",
+      "Human Centered Computing",
+      "Systems-oriented Computer Science",
+    ],
   }),
   new Program({
     name: "Computer Science",
@@ -93,6 +120,18 @@ const programs = [
         from: undefined,
         to: new Date(2026, 5, 15),
       },
+    ],
+    specializations: [
+      "Algorithm Engineering",
+      "Computer Graphics and Geometry Processing",
+      "Data Science",
+      "Design of Embedded Systems and Computer Architectures",
+      "Human-centred Machine Intelligence",
+      "Parallel Computing",
+      "Robotics and Automation",
+      "Software Engineering and Compiler Construction",
+      "Telematics",
+      "Theoretical Foundations",
     ],
   }),
   new Program({
@@ -109,6 +148,12 @@ const programs = [
         to: new Date(2026, 5, 1),
       },
     ],
+    specializations: [
+      "Core Computer Science",
+      "Bioinformatics",
+      "Human-Centred Computing",
+      "Information Systems",
+    ],
   }),
   new Program({
     name: "Computer Science",
@@ -123,6 +168,12 @@ const programs = [
         from: new Date(2025, 10, 1),
         to: new Date(2025, 11, 15),
       },
+    ],
+    specializations: [
+      "Artificial Intelligence",
+      "Cybersecurity",
+      "Quantum Computing",
+      "Software Engineering",
     ],
   }),
   new Program({
@@ -139,6 +190,13 @@ const programs = [
         to: new Date(2026, 4, 31),
       },
     ],
+    specializations: [
+      "Classical and Quantum Algorithm Design",
+      "Computer and Communication Systems",
+      "Data Science and Intelligent Systems",
+      "Security",
+      "Software Engineering",
+    ],
   }),
   new Program({
     name: "Computer Science",
@@ -154,6 +212,16 @@ const programs = [
         to: new Date(2026, 5, 30),
       },
     ],
+    specializations: [
+      "Software Design",
+      "Cloud Computing",
+      "Graphics Programming",
+      "Artificial Intelligence",
+      "Model Checking",
+      "Distributed Systems",
+      "IT Security",
+      "Databases",
+    ],
   }),
   new Program({
     name: "Computer Science",
@@ -168,6 +236,7 @@ const programs = [
         to: new Date(2026, 4, 31),
       },
     ],
+    specializations: ["Artificial Intelligence", "Cyber-Physical Systems"],
   }),
   new Program({
     name: "Computer Science International",
@@ -182,6 +251,7 @@ const programs = [
         to: new Date(2026, 4, 31),
       },
     ],
+    specializations: ["Information Systems", "Complex Systems"],
   }),
   new Program({
     name: "Computer Science",
@@ -196,6 +266,13 @@ const programs = [
         from: undefined,
         to: new Date(2026, 5, 1),
       },
+    ],
+    specializations: [
+      "Data and AI",
+      "Algorithms and Foundations",
+      "Digital Health",
+      "Security Engineering",
+      "Systems",
     ],
   }),
   new Program({
@@ -212,6 +289,14 @@ const programs = [
         to: new Date(2026, 4, 15),
       },
     ],
+    specializations: [
+      "Multimedia Applications",
+      "Distributed Information and Communications Systems",
+      "Language Processing",
+      "Image Processing",
+      "Cryptography",
+      "Program Analysis and Formal Methods",
+    ],
   }),
   new Program({
     name: "Computer and Information Science",
@@ -225,6 +310,13 @@ const programs = [
         from: new Date(2026, 2, 18),
         to: new Date(2026, 3, 15),
       },
+    ],
+    specializations: [
+      "Data science",
+      "Visual computing",
+      "Interactive systems",
+      "Software and systems",
+      "Algorithmics",
     ],
   }),
   new Program({
@@ -241,6 +333,19 @@ const programs = [
         to: new Date(2026, 3, 15),
       },
     ],
+    specializations: [
+      "Applied System Engineering",
+      "Bioinformatics",
+      "Data Science",
+      "Digital Humanities",
+      "Geoinformatics",
+      "Ecological Informatics",
+      "Medical Informatics",
+      "Computational Neuroscience",
+      "Law and Computer Science",
+      "Business Information Systems",
+      "Scientific Computing",
+    ],
   }),
   new Program({
     name: "Web and Data Science",
@@ -256,6 +361,13 @@ const programs = [
         to: new Date(2026, 5, 15),
       },
     ],
+    specializations: [
+      "Web Science",
+      "Network Theory and Dynamic Systems",
+      "Engineering Web and Data-intensive Systems",
+      "Data Science",
+      "Machine Learning and Data Mining",
+    ],
   }),
   new Program({
     name: "Software Systems Engineering",
@@ -269,6 +381,13 @@ const programs = [
         from: new Date(2025, 11, 1),
         to: new Date(2026, 2, 1),
       },
+    ],
+    specializations: [
+      "Theoretical Foundations of Software Systems Engineering",
+      "Communication",
+      "Data and Information Management",
+      "Applied Computer Science",
+      "Software Engineering",
     ],
   }),
   new Program({
@@ -285,6 +404,12 @@ const programs = [
         to: new Date(2026, 6, 15),
       },
     ],
+    specializations: [
+      "Distributed and Mobile Systems",
+      "Software Analysis and Verification",
+      "Service-oriented Architectures",
+      "Communication Systems and Protocols",
+    ],
   }),
   new Program({
     name: "Software Engineering",
@@ -299,6 +424,14 @@ const programs = [
         to: new Date(2026, 5, 30),
       },
     ],
+    specializations: [
+      "Software Engineering",
+      "Requirements Engineering for Quality",
+      "Model-Based Software Engineering",
+      "Software Architectures",
+      "Advanced Web Development",
+      "Software Product Line Engineering",
+    ],
   }),
   new Program({
     name: "Web Engineering",
@@ -312,6 +445,12 @@ const programs = [
         from: new Date(2026, 3, 1),
         to: new Date(2026, 6, 15),
       },
+    ],
+    specializations: [
+      "Databases",
+      "Information Systems",
+      "Software Engineering",
+      "Internet and Web Technologies",
     ],
   }),
 ].toSorted();

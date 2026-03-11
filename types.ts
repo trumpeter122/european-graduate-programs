@@ -34,6 +34,7 @@ export type ProgramParams = {
   name: string;
   universityName: string;
   windows: ApplicationWindow[];
+  specializations?: string[];
   requirements?: Requirement[];
   materials?: Material[];
   applicationStatus?: ApplicationStatus;
@@ -51,16 +52,22 @@ export class Program {
   name: string;
   universityName: string;
   windows: ApplicationWindow[];
+  specializations?: string[];
   requirements?: Requirement[];
-  applicationStatus: ApplicationStatus;
   materials?: Material[];
+  sources?: Source[];
+  applicationStatus: ApplicationStatus;
 
   constructor(params: ProgramParams) {
     this.name = params.name;
     this.universityName = params.universityName;
     this.windows = params.windows;
+    this.specializations = params.specializations?.toSorted(
+      (a, b) => a.length - b.length,
+    );
     this.requirements = params.requirements;
     this.materials = params.materials;
+    this.sources = params.sources;
     this.applicationStatus = params.applicationStatus ?? "pending";
 
     this.windows.forEach((w) => {
