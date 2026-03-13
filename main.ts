@@ -11,18 +11,30 @@ import {
   type Semester,
 } from "./types";
 
-const printProgram = (p: Program) => {
-  console.log(pc.red(`${p.name}\t\t${p.universityName}`));
+const printFormats = ["brief", "full"] as const;
+type PrintFormat = (typeof printFormats)[number];
 
-  const line = (label: string, value: string | number | undefined) => {
-    console.log(`${pc.cyan(label)}: ${value ?? "-"}`);
-  };
+const printProgram = (p: Program, format: PrintFormat) => {
+  switch (format) {
+    case "full": {
+      console.log(pc.red(`${p.name}\t\t${p.universityName}`));
 
-  line("Specializations", p.specializations?.join(", "));
-  line("Start", `${p.getDaysUntilWindowStarts(targetSemester)} days`);
-  line("End", `${p.getDaysUntilWindowEnds(targetSemester)} days`);
-  line("Status", p.applicationStatus);
-  console.log();
+      const line = (label: string, value: string | number | undefined) => {
+        console.log(`${pc.cyan(label)}: ${value ?? "-"}`);
+      };
+
+      line("Specializations", p.specializations?.join(", "));
+      line("Start", `${p.getDaysUntilWindowStarts(targetSemester)} days`);
+      line("End", `${p.getDaysUntilWindowEnds(targetSemester)} days`);
+      line("Status", p.applicationStatus);
+      console.log();
+      break;
+    }
+    case "brief": {
+      console.log(pc.red(`${p.name}, ${p.universityName}`));
+      break;
+    }
+  }
 };
 
 const targetSemester = { season: "winter", startingYear: "2026" } as Semester;
@@ -44,6 +56,9 @@ const { values } = parseArgs({
       type: "string",
     },
     status: {
+      type: "string",
+    },
+    format: {
       type: "string",
     },
   },
@@ -88,5 +103,11 @@ if (choice.status !== undefined) {
 }
 
 selectedPrograms.forEach((p) => {
-  printProgram(p);
+  if (values.format) {
+    if (printFormats.includes(values.format as PrintFormat)) {
+      printProgram(p, values.format as PrintFormat);
+    } else throw Error(`Invalid format: ${values.format}`);
+  } else {
+    printProgram(p, "full");
+  }
 });
