@@ -1,3 +1,5 @@
+import { z } from "zod";
+
 export const applicationStati = [
   "pending",
   "working",
@@ -8,12 +10,6 @@ export const applicationStati = [
 
 export type ApplicationStatus = (typeof applicationStati)[number];
 
-export type ApplicationWindow = {
-  semester: Semester;
-  from?: Date;
-  to: Date;
-};
-
 export const availabilityTypes = [
   "closed",
   "not-opened",
@@ -23,30 +19,60 @@ export const availabilityTypes = [
 
 export type Availability = (typeof availabilityTypes)[number];
 
-export type Material = any;
+export const SemesterSchema = z.object({
+  season: z.literal("winter"),
+  startingYear: z.literal("2026"),
+});
 
-export type Requirement = {
-  needed: boolean;
-  qualified: boolean;
-};
+export type Semester = z.infer<typeof SemesterSchema>;
 
-export type ProgramParams = {
-  name: string;
-  universityName: string;
-  windows: ApplicationWindow[];
-  specializations?: string[];
-  requirements?: Requirement[];
-  materials?: Material[];
-  applicationStatus?: ApplicationStatus;
-  sources?: Source[];
-};
+export const ApplicationWindowSchema = z
+  .object({
+    semester: SemesterSchema,
+    from: z.date().optional(),
+    to: z.date(),
+  })
+  .superRefine((window, ctx) => {
+    if (
+      window.from !== undefined &&
+      window.from.getTime() >= window.to.getTime()
+    ) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: `"from" (${window.from.toISOString()}) must be before "to" (${window.to.toISOString()})`,
+      });
+    }
+  });
 
-export type Semester = {
-  season: "winter";
-  startingYear: "2026";
-};
+export type ApplicationWindow = z.infer<typeof ApplicationWindowSchema>;
 
-export type Source = any;
+export const RequirementSchema = z.object({
+  needed: z.boolean(),
+  qualified: z.boolean(),
+});
+
+export type Requirement = z.infer<typeof RequirementSchema>;
+
+export const MaterialSchema = z.unknown();
+
+export type Material = z.infer<typeof MaterialSchema>;
+
+export const SourceSchema = z.unknown();
+
+export type Source = z.infer<typeof SourceSchema>;
+
+export const ProgramSeedSchema = z.object({
+  name: z.string(),
+  universityName: z.string(),
+  windows: z.array(ApplicationWindowSchema),
+  specializations: z.array(z.string()).optional(),
+  requirements: z.array(RequirementSchema).optional(),
+  materials: z.array(MaterialSchema).optional(),
+  applicationStatus: z.enum(applicationStati).optional(),
+  sources: z.array(SourceSchema).optional(),
+});
+
+export type ProgramSeed = z.infer<typeof ProgramSeedSchema>;
 
 export class Program {
   name: string;
@@ -58,25 +84,19 @@ export class Program {
   sources?: Source[];
   applicationStatus: ApplicationStatus;
 
-  constructor(params: ProgramParams) {
-    this.name = params.name;
-    this.universityName = params.universityName;
-    this.windows = params.windows;
-    this.specializations = params.specializations?.toSorted(
+  constructor(params: ProgramSeed) {
+    const parsed = ProgramSeedSchema.parse(params);
+
+    this.name = parsed.name;
+    this.universityName = parsed.universityName;
+    this.windows = parsed.windows;
+    this.specializations = parsed.specializations?.toSorted(
       (a, b) => a.length - b.length,
     );
-    this.requirements = params.requirements;
-    this.materials = params.materials;
-    this.sources = params.sources;
-    this.applicationStatus = params.applicationStatus ?? "pending";
-
-    this.windows.forEach((w) => {
-      if (w.from !== undefined && w.from.getTime() >= w.to.getTime()) {
-        throw new RangeError(
-          `"from" (${w.from.toISOString()}) must be before "to" (${w.to.toISOString()})`,
-        );
-      }
-    });
+    this.requirements = parsed.requirements;
+    this.materials = parsed.materials;
+    this.sources = parsed.sources;
+    this.applicationStatus = parsed.applicationStatus ?? "pending";
   }
 
   private getMatchingWindow = (semester: Semester): ApplicationWindow => {
