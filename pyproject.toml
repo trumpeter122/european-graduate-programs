@@ -14,19 +14,16 @@ dependencies = [
   "ruff>=0.15.6",
 ]
 
-[project.scripts]
-programs = "programs.cli:main"
-
-[tool.ruff]
-extend-exclude = [".ipynb_checkpoints", ".virtual_documents", "*.ipynb"]
-line-length = 88
-target-version = "py313"
-
-[tool.ruff.lint]
-select = ["B", "E", "F", "I", "RUF", "UP"]
-
-[tool.ruff.format]
-quote-style = "double"
+# [tool.ruff]
+# extend-exclude = [".ipynb_checkpoints", ".virtual_documents", "*.ipynb"]
+# line-length = 88
+# target-version = "py313"
+#
+# [tool.ruff.lint]
+# select = ["B", "E", "F", "I", "RUF", "UP"]
+#
+# [tool.ruff.format]
+# quote-style = "double"
 
 [tool.mypy]
 python_version = "3.13"
