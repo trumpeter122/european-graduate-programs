@@ -1,1 +1,9 @@
 node_modules
+
+.ipynb_checkpoints
+.mypy_cache
+.pyright
+.ruff_cache
+.virtual_documents
+.venv
+__pycache__

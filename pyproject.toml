@@ -1,0 +1,39 @@
+[project]
+name = "programs"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+  "jupyterlab>=4.5.6",
+  "jupyterlab-lsp>=5.2.0",
+  "jupyterlab-vim>=4.1.4",
+  "mypy>=1.19.1",
+  "pyright>=1.1.408",
+  "python-lsp-server[jedi,ruff]>=1.14.0",
+  "ruff>=0.15.6",
+]
+
+[project.scripts]
+programs = "programs.cli:main"
+
+[tool.ruff]
+extend-exclude = [".ipynb_checkpoints", ".virtual_documents", "*.ipynb"]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "RUF", "UP"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+files = ["data.py", "models.py"]
+
+[tool.pyright]
+pythonVersion = "3.13"
+typeCheckingMode = "strict"
+include = ["data.py", "models.py"]
