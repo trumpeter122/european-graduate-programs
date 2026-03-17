@@ -27,6 +27,8 @@ AVAILABILITY_TYPES: Final[tuple[str, ...]] = (
 )
 type Availability = Literal["closed", "not-opened", "opened", "not-closed"]
 
+UNIASSIST_FEE = 30  # 75 EUR for first-time application
+
 type Season = Literal["winter"]
 type StartingYear = Literal["2026"]
 type Material = object
@@ -65,6 +67,7 @@ class Program:
     name: str
     university_name: str
     windows: list[ApplicationWindow]
+    application_fee: int | None
     specializations: list[str] | None = None
     requirements: list[Requirement] | None = None
     materials: list[Material] | None = None
@@ -73,7 +76,7 @@ class Program:
 
     def __post_init__(self) -> None:
         if self.specializations is not None:
-            self.specializations = sorted(self.specializations, key=len)
+            self.specializations = sorted(self.specializations)
 
         for window in self.windows:
             if window.from_date is not None and window.from_date >= window.to_date:

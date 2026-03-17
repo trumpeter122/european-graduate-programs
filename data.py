@@ -3,7 +3,7 @@ from __future__ import annotations
 from datetime import date
 from typing import Final
 
-from models import ApplicationWindow, Program, Semester
+from models import UNIASSIST_FEE, ApplicationWindow, Program, Semester
 
 TARGET_SEMESTER: Final = Semester(season="winter", starting_year="2026")
 
@@ -28,6 +28,7 @@ PROGRAMS: Final[list[Program]] = [
             "Service Technology and Engineering",
             "Visual Computing",
         ],
+        application_fee=0,
     ),
     Program(
         name="Computer Science",
@@ -44,6 +45,7 @@ PROGRAMS: Final[list[Program]] = [
             "Intelligence Engineering",
             "Mathematics",
         ],
+        application_fee=0,
     ),
     Program(
         name="Computer Science",
@@ -61,6 +63,7 @@ PROGRAMS: Final[list[Program]] = [
             "Complex and Intelligent Software Systems",
         ],
         application_status="working",
+        application_fee=0,
     ),
     Program(
         name="Computer Science",
@@ -78,6 +81,7 @@ PROGRAMS: Final[list[Program]] = [
             "Information and Communication Management",
             "Intelligent Systems",
         ],
+        application_fee=0,
     ),
     Program(
         name="Computer Science",
@@ -94,6 +98,7 @@ PROGRAMS: Final[list[Program]] = [
             "Human Centered Computing",
             "Systems-oriented Computer Science",
         ],
+        application_fee=UNIASSIST_FEE,
     ),
     Program(
         name="Computer Science",
@@ -118,6 +123,8 @@ PROGRAMS: Final[list[Program]] = [
             "Telematics",
             "Theoretical Foundations",
         ],
+        # Not specified
+        application_fee=None,
     ),
     Program(
         name="Computer Science",
@@ -136,6 +143,7 @@ PROGRAMS: Final[list[Program]] = [
             "Human-Centred Computing",
             "Information Systems",
         ],
+        application_fee=UNIASSIST_FEE,
     ),
     Program(
         name="Computer Science",
@@ -154,6 +162,8 @@ PROGRAMS: Final[list[Program]] = [
             "Quantum Computing",
             "Software Engineering",
         ],
+        # Not specified
+        application_fee=None,
     ),
     Program(
         name="Computer Science",
@@ -173,6 +183,7 @@ PROGRAMS: Final[list[Program]] = [
             "Security",
             "Software Engineering",
         ],
+        application_fee=UNIASSIST_FEE,
     ),
     Program(
         name="Computer Science",
@@ -195,6 +206,7 @@ PROGRAMS: Final[list[Program]] = [
             "IT Security",
             "Databases",
         ],
+        application_fee=UNIASSIST_FEE,
     ),
     Program(
         name="Computer Science",
@@ -207,6 +219,7 @@ PROGRAMS: Final[list[Program]] = [
             )
         ],
         specializations=["Artificial Intelligence", "Cyber-Physical Systems"],
+        application_fee=0,
     ),
     Program(
         name="Computer Science International",
@@ -219,6 +232,7 @@ PROGRAMS: Final[list[Program]] = [
             )
         ],
         specializations=["Information Systems", "Complex Systems"],
+        application_fee=UNIASSIST_FEE,
     ),
     Program(
         name="Computer Science",
@@ -237,6 +251,7 @@ PROGRAMS: Final[list[Program]] = [
             "Security Engineering",
             "Systems",
         ],
+        application_fee=0,
     ),
     Program(
         name="Computer Science",
@@ -257,6 +272,8 @@ PROGRAMS: Final[list[Program]] = [
             "Cryptography",
             "Program Analysis and Formal Methods",
         ],
+        # Not specified
+        application_fee=None,
     ),
     Program(
         name="Computer and Information Science",
@@ -275,6 +292,8 @@ PROGRAMS: Final[list[Program]] = [
             "Software and systems",
             "Algorithmics",
         ],
+        # Not specified
+        application_fee=None,
     ),
     Program(
         name="Applied Computer Science",
@@ -300,6 +319,7 @@ PROGRAMS: Final[list[Program]] = [
             "Business Information Systems",
             "Scientific Computing",
         ],
+        application_fee=0,
     ),
     Program(
         name="Web and Data Science",
@@ -319,6 +339,7 @@ PROGRAMS: Final[list[Program]] = [
             "Data Science",
             "Machine Learning and Data Mining",
         ],
+        application_fee=UNIASSIST_FEE,
     ),
     Program(
         name="Software Systems Engineering",
@@ -337,6 +358,7 @@ PROGRAMS: Final[list[Program]] = [
             "Applied Computer Science",
             "Software Engineering",
         ],
+        application_fee=0,
     ),
     Program(
         name="International Software Systems Science",
@@ -355,6 +377,7 @@ PROGRAMS: Final[list[Program]] = [
             "Service-oriented Architectures",
             "Communication Systems and Protocols",
         ],
+        application_fee=0,
     ),
     Program(
         name="Software Engineering",
@@ -374,6 +397,7 @@ PROGRAMS: Final[list[Program]] = [
             "Advanced Web Development",
             "Software Product Line Engineering",
         ],
+        application_fee=UNIASSIST_FEE,
     ),
     Program(
         name="Web Engineering",
@@ -391,6 +415,7 @@ PROGRAMS: Final[list[Program]] = [
             "Software Engineering",
             "Internet and Web Technologies",
         ],
+        application_fee=UNIASSIST_FEE,
     ),
     # Temporarily ignored
     # Program(
@@ -422,6 +447,8 @@ PROGRAMS: Final[list[Program]] = [
             "Brain and Behavior",
             "Computation and Artificial Intelligence",
         ],
+        # Not specified
+        application_fee=None,
     ),
     Program(
         name="Cognitive Science",
@@ -439,6 +466,7 @@ PROGRAMS: Final[list[Program]] = [
             "Cognition: (Computational) Neuroscience",
             "Cognition: Psychology, Language, and Communication",
         ],
+        application_fee=UNIASSIST_FEE,
     ),
     Program(
         name="Cognitive Science",
@@ -458,6 +486,7 @@ PROGRAMS: Final[list[Program]] = [
             "Cognitive Neuroscience",
             "Computation",
         ],
+        application_fee=60,
     ),
     Program(
         name="Cognitive Science",
@@ -479,6 +508,7 @@ PROGRAMS: Final[list[Program]] = [
             "Cognitive Modeling",
             "Advanced Natural Language Processing",
         ],
+        application_fee=0,
     ),
     Program(
         name="Cognitive Science",
@@ -497,6 +527,8 @@ PROGRAMS: Final[list[Program]] = [
             "Higher Cognition",
             "Applied Cognitive Science",
         ],
+        # Not specified
+        application_fee=None,
     ),
     Program(
         name="Cognitive Systems",
@@ -515,6 +547,7 @@ PROGRAMS: Final[list[Program]] = [
             "Interaction",
             "Methods, General Concepts and Tools",
         ],
+        application_fee=UNIASSIST_FEE,
     ),
     Program(
         name="Mind, Brain and Behavior",
@@ -532,6 +565,7 @@ PROGRAMS: Final[list[Program]] = [
             "Visual Cognition and Object Perception",
             "Current Topics in Cognition and Development",
         ],
+        application_fee=UNIASSIST_FEE,
     ),
     Program(
         name="Neural and Behavioural Sciences",
@@ -553,6 +587,8 @@ PROGRAMS: Final[list[Program]] = [
             "Neurophysiology and Neuropsychology",
             "Learning and Memory",
         ],
+        # Not specified
+        application_fee=None,
     ),
     Program(
         name="Neuroscience",
@@ -569,6 +605,7 @@ PROGRAMS: Final[list[Program]] = [
             "Behavioural Neuroscience",
             "Computational Neuroscience",
         ],
+        application_fee=UNIASSIST_FEE,
     ),
     Program(
         name="Neuroscience",
@@ -584,5 +621,7 @@ PROGRAMS: Final[list[Program]] = [
             "Experimental Neuroscience",
             "Computational Neuroscience",
         ],
+        # Not specified
+        application_fee=None,
     ),
 ]
