@@ -7,8 +7,8 @@ from models import ApplicationWindow, Program, Semester
 
 TARGET_SEMESTER: Final = Semester(season="winter", starting_year="2026")
 
-# English-taught or English-only-applicable Master programs applied from outside
-# of the EU
+# English-taught or English-only-applicable 1st-year Master programs applied from
+# outside of the EU with Visa requirement
 # For fields like application windows, only information specific to that program
 # is accepted
 # Specializations marked explicitly as German-only are ignored
@@ -226,8 +226,7 @@ PROGRAMS: Final[list[Program]] = [
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
-                # Not specified
-                from_date=None,
+                from_date=date(2026, 4, 1),
                 to_date=date(2026, 6, 1),
             )
         ],
@@ -378,7 +377,7 @@ PROGRAMS: Final[list[Program]] = [
     ),
     Program(
         name="Web Engineering",
-        university_name="Chemniz University of Technology",
+        university_name="Chemnitz University of Technology",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -391,6 +390,199 @@ PROGRAMS: Final[list[Program]] = [
             "Information Systems",
             "Software Engineering",
             "Internet and Web Technologies",
+        ],
+    ),
+    # Temporarily ignored
+    # Program(
+    #     name="Computer Science",
+    #     university_name="Paris-Saclay University",
+    #     windows=[
+    #         ApplicationWindow(
+    #             semester=TARGET_SEMESTER,
+    #             # Not specified
+    #             from_date=None,
+    #             to_date=date(2026, 3, 16),
+    #         )
+    #     ],
+    #     application_status="working",
+    # ),
+    Program(
+        name="Cognitive Science",
+        university_name="Ruhr University Bochum",
+        windows=[
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                # Approximation for the beginning of June
+                from_date=date(2026, 6, 1),
+                to_date=date(2026, 7, 15),
+            )
+        ],
+        specializations=[
+            "Mind and Language",
+            "Brain and Behavior",
+            "Computation and Artificial Intelligence",
+        ],
+    ),
+    Program(
+        name="Cognitive Science",
+        university_name="University of Osnabrueck",
+        windows=[
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                from_date=date(2026, 5, 7),
+                to_date=date(2026, 6, 15),
+            )
+        ],
+        specializations=[
+            "Cognition: Artificial Intelligence and Machine Learning",
+            "Cognition: Mind, Ethics, and Society",
+            "Cognition: (Computational) Neuroscience",
+            "Cognition: Psychology, Language, and Communication",
+        ],
+    ),
+    Program(
+        name="Cognitive Science",
+        university_name="Rhineland-Palatinate Technical University of "
+        "Kaiserslautern-Landau",
+        windows=[
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                from_date=date(2026, 2, 23),
+                to_date=date(2026, 4, 30),
+            )
+        ],
+        specializations=[
+            "Perception",
+            "Cognition and Knowledge",
+            "Language and Linguistics",
+            "Cognitive Neuroscience",
+            "Computation",
+        ],
+    ),
+    Program(
+        name="Cognitive Science",
+        university_name="University of Potsdam",
+        windows=[
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                from_date=date(2026, 4, 1),
+                to_date=date(2026, 6, 1),
+            )
+        ],
+        specializations=[
+            "First Language Acquisition",
+            "Language Processing",
+            "Evidence Bases for Language Disorders",
+            "Cognitive Development",
+            "Cognitive Neuroscience",
+            "Cognition",
+            "Cognitive Modeling",
+            "Advanced Natural Language Processing",
+        ],
+    ),
+    Program(
+        name="Cognitive Science",
+        university_name="Technical University of Darmstadt",
+        windows=[
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                from_date=date(2025, 12, 1),
+                to_date=date(2026, 3, 1),
+            )
+        ],
+        specializations=[
+            "Cognitive Psychology",
+            "Artificial Intelligence",
+            "Perception and Action",
+            "Higher Cognition",
+            "Applied Cognitive Science",
+        ],
+    ),
+    Program(
+        name="Cognitive Systems",
+        university_name="University of Ulm",
+        windows=[
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                from_date=date(2026, 4, 1),
+                to_date=date(2026, 5, 15),
+            )
+        ],
+        specializations=[
+            "Perception",
+            "Learning and Memory",
+            "Planning and Reasoning",
+            "Interaction",
+            "Methods, General Concepts and Tools",
+        ],
+    ),
+    Program(
+        name="Mind, Brain and Behavior",
+        university_name="University of Giessen",
+        windows=[
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                from_date=date(2025, 12, 1),
+                to_date=date(2026, 6, 15),
+            )
+        ],
+        specializations=[
+            "Visual Perception of Color and Materials",
+            "Perception and Action",
+            "Visual Cognition and Object Perception",
+            "Current Topics in Cognition and Development",
+        ],
+    ),
+    Program(
+        name="Neural and Behavioural Sciences",
+        university_name="University of Tuebingen",
+        windows=[
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                # Not specified
+                from_date=None,
+                to_date=date(2026, 3, 31),
+            )
+        ],
+        specializations=[
+            "Functional Neuroanatomy",
+            "Computational Neuroscience",
+            "Brain Imaging and Recording",
+            "Motor and Sensory Systems Neuroscience",
+            "Cognitive Neuroscience and Psychophysics",
+            "Neurophysiology and Neuropsychology",
+            "Learning and Memory",
+        ],
+    ),
+    Program(
+        name="Neuroscience",
+        university_name="University of Oldenburg",
+        windows=[
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                from_date=date(2026, 3, 15),
+                to_date=date(2026, 4, 30),
+            )
+        ],
+        specializations=[
+            "Sensory Neuroscience",
+            "Behavioural Neuroscience",
+            "Computational Neuroscience",
+        ],
+    ),
+    Program(
+        name="Neuroscience",
+        university_name="University of Bremen",
+        windows=[
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                from_date=date(2026, 3, 1),
+                to_date=date(2026, 4, 30),
+            )
+        ],
+        specializations=[
+            "Experimental Neuroscience",
+            "Computational Neuroscience",
         ],
     ),
 ]
