@@ -19,4 +19,4 @@ Expect the data to be incomplete and incorrect.
 
 ## How to Run
 
-Install the packages following `pyproject.toml`. Ignore `flake.nix`, as it is not for packaging but for development environments on my own machine.
+Install the packages following `pyproject.toml`. Ignore `flake.nix` if you are not on NixOS, as it is not for packaging but for setting up a development environment with needed libraries.

@@ -11,7 +11,7 @@ dependencies = [
   "mypy>=1.19.1",
   "pandas>=3.0.1",
   "pyright>=1.1.408",
-  "python-lsp-server[jedi,ruff]>=1.14.0",
+  "python-lsp-server[all]>=1.14.0",
   "ruff>=0.15.6",
 ]
 
