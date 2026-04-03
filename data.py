@@ -9,8 +9,9 @@ TARGET_SEMESTER: Final = Semester(season="winter", starting_year="2026")
 
 # English-taught or English-only-applicable 1st-year Master programs applied from
 # outside of the EU with Visa requirement
-# For fields like application windows, only information specific to that program
-# is accepted
+# For fields like windows and application_fee, only information specific to that program
+# is accepted, except when it is explicitly specified that the program follows general
+# regulations for that field.
 # Specializations marked explicitly as German-only are ignored
 PROGRAMS: Final[list[Program]] = [
     Program(
@@ -623,5 +624,240 @@ PROGRAMS: Final[list[Program]] = [
         ],
         # Not specified
         application_fee=None,
+    ),
+    Program(
+        name="Cognitive Science",
+        university_name="University of Trento",
+        windows=[
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                from_date=date(2026, 2, 9),
+                to_date=date(2026, 5, 29),
+            )
+        ],
+        specializations=[
+            "Cognitive Neuroscience",
+            "Computational and Theoretical Modelling of Language and Cognition",
+            "fundamental Behavioural Neuroscience",
+        ],
+        application_fee=30,
+    ),
+    Program(
+        name="Computer Science",
+        university_name="University of Bari Aldo Moro",
+        windows=[
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                from_date=None,
+                # Approximation for the last assessment session held in February
+                to_date=date(2026, 2, 28),
+            )
+        ],
+        specializations=[
+            "Artificial Intelligence",
+            "Security Engineering",
+        ],
+        # Not specified
+        application_fee=None,
+    ),
+    Program(
+        name="Computer Science",
+        university_name="University of Camerino",
+        windows=[
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                # Not specified
+                from_date=None,
+                to_date=date(2026, 3, 31),
+            )
+        ],
+        specializations=[
+            "Business Information Systems",
+            "Artificial Intelligence",
+            "Software Development and Technologies",
+            "Methodologies and Technologies for Digital Communication",
+        ],
+        application_fee=20,
+    ),
+    # Program(
+    #     name="Computer Science and Information Technology",
+    #     university_name="Ca' Foscari University of Venice",
+    #     windows=[
+    #         ApplicationWindow(
+    #             from_date=date(2025, 12, 17),
+    #             to_date=None,
+    #         )
+    #     ],
+    #     specializations=[
+    #         "Software Development and Engineering",
+    #         "Artificial Intelligence and Data Engineering",
+    #         "Cybersecurity",
+    #     ],
+    #     application_fee=30,
+    # ),
+    Program(
+        name="Computer Science",
+        university_name="University of Genoa",
+        windows=[
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                from_date=date(2025, 11, 26),
+                to_date=date(2026, 3, 20),
+            )
+        ],
+        specializations=[
+            "Data Science & Engineering",
+            "Software Security & Engineering",
+        ],
+        application_fee=30,
+    ),
+    # Program(
+    #     name="Computer Science",
+    #     university_name="University of Insubria",
+    #     windows=[
+    #         ApplicationWindow(
+    #             semester=TARGET_SEMESTER,
+    #             from_date=None,
+    #             to_date=None,
+    #         )
+    #     ],
+    #     specializations=None,
+    #     application_fee=None,
+    # ),
+    Program(
+        name="Computer Science and Engineering",
+        university_name="Politecnico di Milano",
+        windows=[
+            # ApplicationWindow(
+            #     semester=TARGET_SEMESTER,
+            #     from_date=date(2025, 10, 1),
+            #     to_date=date(2025, 12, 1),
+            # ),
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                from_date=date(2026, 1, 13),
+                to_date=date(2026, 2, 26),
+            ),
+        ],
+        specializations=[
+            "Ambient and data intelligence",
+            "Artificial intelligence and machine learning",
+            "Big data and data science",
+            "Bioinformatics and e-health",
+            "Business informatics, analytics and intelligence",
+            "Cybersecurity",
+            "Interactive applications",
+            "Internet engineering",
+            "Pervasive Systems",
+            "Robotics and Vision",
+            "Software engineering for complex systems",
+        ],
+        # Not specified
+        application_fee=None,
+    ),
+    Program(
+        name="Engineering in Computer Science",
+        university_name="University of Messina",
+        windows=[
+            # ApplicationWindow(
+            #     semester=TARGET_SEMESTER,
+            #     from_date=date(2025, 11, 24),
+            #     to_date=date(2025, 12, 22),
+            # ),
+            # ApplicationWindow(
+            #     semester=TARGET_SEMESTER,
+            #     from_date=date(2026, 2, 1),
+            #     to_date=date(2026, 3, 31),
+            # ),
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                from_date=date(2026, 4, 13),
+                to_date=date(2026, 5, 10),
+            ),
+        ],
+        # Not specified
+        specializations=None,
+        application_fee=30,
+    ),
+    Program(
+        name="Computer Science",
+        university_name="University of Padua",
+        windows=[
+            # ApplicationWindow(
+            #     semester=TARGET_SEMESTER,
+            #     from_date=date(2025, 11, 2),
+            #     to_date=date(2026, 2, 2),
+            # ),
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                from_date=date(2026, 3, 2),
+                to_date=date(2026, 5, 2),
+            ),
+        ],
+        # Not specified
+        specializations=None,
+        application_fee=60,
+    ),
+    Program(
+        name="Computer Science",
+        university_name="University of Pisa",
+        windows=[
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                from_date=date(2025, 12, 1),
+                to_date=date(2026, 2, 5),
+            )
+        ],
+        specializations=[
+            "Artificial Intelligence",
+            "Big Data Technologies",
+            "Foundations of Software",
+            "ICT Solutions Architect",
+        ],
+        application_fee=30,
+    ),
+    Program(
+        name="Computer Science",
+        university_name="Sapienza University of Rome",
+        windows=[
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                from_date=date(2025, 12, 22),
+                to_date=date(2026, 5, 15),
+            )
+        ],
+        # Single curriculum
+        specializations=None,
+        application_fee=30,
+    ),
+    Program(
+        name="Computer Science",
+        university_name="University of Trento",
+        windows=[
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                # Not specified
+                from_date=None,
+                to_date=date(2026, 3, 4),
+            )
+        ],
+        specializations=[
+            "Computer Science and Technologies",
+            "ICT Innovation",
+        ],
+        application_fee=30,
+    ),
+    Program(
+        name="Software Engineering",
+        university_name="Free University of Bozen-Bolzano",
+        windows=[
+            ApplicationWindow(
+                semester=TARGET_SEMESTER,
+                from_date=date(2026, 3, 2),
+                to_date=date(2026, 4, 28),
+            )
+        ],
+        specializations=None,
+        application_fee=50,
     ),
 ]
