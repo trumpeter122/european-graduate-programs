@@ -77,6 +77,11 @@ class Program:
     def __post_init__(self) -> None:
         if self.specializations is not None:
             self.specializations = sorted(self.specializations)
+        if any(
+            len([w1.semester == w2.semester for w2 in self.windows]) > 1
+            for w1 in self.windows
+        ):
+            raise Exception("More than 1 window found for 1 semester")
 
         for window in self.windows:
             if window.from_date is not None and window.from_date >= window.to_date:
