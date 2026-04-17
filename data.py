@@ -63,7 +63,6 @@ PROGRAMS: Final[list[Program]] = [
             "Visual Computing",
             "Complex and Intelligent Software Systems",
         ],
-        application_status="working",
         application_fee=0,
     ),
     Program(
@@ -430,7 +429,6 @@ PROGRAMS: Final[list[Program]] = [
     #             to_date=date(2026, 3, 16),
     #         )
     #     ],
-    #     application_status="working",
     # ),
     Program(
         name="Cognitive Science",

@@ -4,21 +4,6 @@ from dataclasses import dataclass
 from datetime import date, timedelta
 from typing import Final, Literal, TypeGuard
 
-APPLICATION_STATI: Final[tuple[str, ...]] = (
-    "pending",
-    "working",
-    "waiting",
-    "accepted",
-    "rejected",
-)
-type ApplicationStatus = Literal[
-    "pending",
-    "working",
-    "waiting",
-    "accepted",
-    "rejected",
-]
-
 AVAILABILITY_TYPES: Final[tuple[str, ...]] = (
     "closed",
     "not-opened",
@@ -33,10 +18,6 @@ type Season = Literal["winter"]
 type StartingYear = Literal["2026"]
 type Material = object
 type Source = object
-
-
-def is_application_status(value: str) -> TypeGuard[ApplicationStatus]:
-    return value in APPLICATION_STATI
 
 
 def is_availability(value: str) -> TypeGuard[Availability]:
@@ -72,7 +53,6 @@ class Program:
     requirements: list[Requirement] | None = None
     materials: list[Material] | None = None
     sources: list[Source] | None = None
-    application_status: ApplicationStatus = "pending"
 
     def __post_init__(self) -> None:
         if self.specializations is not None:
