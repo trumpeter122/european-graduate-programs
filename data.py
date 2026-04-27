@@ -17,6 +17,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="University of Stuttgart",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -34,6 +35,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="Technical University of Hamburg",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -51,6 +53,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="University of Siegen",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -68,6 +71,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="University of Bonn",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -86,6 +90,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="University of Hannover",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -103,6 +108,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="Karlsruhe Institute of Technology",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -129,6 +135,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="University of Regensburg",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -148,6 +155,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="Ruhr University Bochum",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -168,6 +176,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="Paderborn University",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -188,6 +197,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="University of Marburg",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -211,6 +221,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="University of Freiburg",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -224,6 +235,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science International",
         university_name="University of Rostock",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -237,6 +249,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="University of Potsdam",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -256,6 +269,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="Saarland University",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -278,6 +292,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer and Information Science",
         university_name="University of Konstanz",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -298,6 +313,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Applied Computer Science",
         university_name="University of Goettingen",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -324,6 +340,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Web and Data Science",
         university_name="University of Koblenz",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -344,6 +361,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Software Systems Engineering",
         university_name="RWTH Aachen University",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -363,6 +381,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="International Software Systems Science",
         university_name="Bamberg University",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -382,6 +401,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Software Engineering",
         university_name="University of Hildesheim",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -402,6 +422,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Web Engineering",
         university_name="Chemnitz University of Technology",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -433,6 +454,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Cognitive Science",
         university_name="Ruhr University Bochum",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -452,6 +474,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Cognitive Science",
         university_name="University of Osnabrueck",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -471,6 +494,7 @@ PROGRAMS: Final[list[Program]] = [
         name="Cognitive Science",
         university_name="Rhineland-Palatinate Technical University of "
         "Kaiserslautern-Landau",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -490,6 +514,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Cognitive Science",
         university_name="University of Potsdam",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -512,6 +537,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Cognitive Science",
         university_name="Technical University of Darmstadt",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -532,6 +558,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Cognitive Systems",
         university_name="University of Ulm",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -551,6 +578,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Mind, Brain and Behavior",
         university_name="University of Giessen",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -569,6 +597,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Neural and Behavioural Sciences",
         university_name="University of Tuebingen",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -592,6 +621,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Neuroscience",
         university_name="University of Oldenburg",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -609,6 +639,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Neuroscience",
         university_name="University of Bremen",
+        country="Germany",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -626,6 +657,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Cognitive Science",
         university_name="University of Trento",
+        country="Italy",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -643,6 +675,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="University of Bari Aldo Moro",
+        country="Italy",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -661,6 +694,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="University of Camerino",
+        country="Italy",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -696,6 +730,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="University of Genoa",
+        country="Italy",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -725,6 +760,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science and Engineering",
         university_name="Politecnico di Milano",
+        country="Italy",
         windows=[
             # ApplicationWindow(
             #     semester=TARGET_SEMESTER,
@@ -756,6 +792,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Engineering in Computer Science",
         university_name="University of Messina",
+        country="Italy",
         windows=[
             # ApplicationWindow(
             #     semester=TARGET_SEMESTER,
@@ -780,6 +817,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="University of Padua",
+        country="Italy",
         windows=[
             # ApplicationWindow(
             #     semester=TARGET_SEMESTER,
@@ -799,6 +837,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="University of Pisa",
+        country="Italy",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -817,6 +856,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="Sapienza University of Rome",
+        country="Italy",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -831,6 +871,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Computer Science",
         university_name="University of Trento",
+        country="Italy",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,
@@ -848,6 +889,7 @@ PROGRAMS: Final[list[Program]] = [
     Program(
         name="Software Engineering",
         university_name="Free University of Bozen-Bolzano",
+        country="Italy",
         windows=[
             ApplicationWindow(
                 semester=TARGET_SEMESTER,

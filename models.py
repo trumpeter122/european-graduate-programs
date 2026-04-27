@@ -12,6 +12,9 @@ AVAILABILITY_TYPES: Final[tuple[str, ...]] = (
 )
 type Availability = Literal["closed", "not-opened", "opened", "not-closed"]
 
+COUNTRIES: Final[tuple[str, ...]] = ("Germany", "Italy")
+type Country = Literal["Germany", "Italy"]
+
 UNIASSIST_FEE = 30  # 75 EUR for first-time application
 
 type Season = Literal["winter"]
@@ -22,6 +25,10 @@ type Source = object
 
 def is_availability(value: str) -> TypeGuard[Availability]:
     return value in AVAILABILITY_TYPES
+
+
+def is_country(value: str) -> TypeGuard[Country]:
+    return value in COUNTRIES
 
 
 @dataclass(frozen=True, slots=True)
@@ -47,6 +54,7 @@ class Requirement:
 class Program:
     name: str
     university_name: str
+    country: Country
     windows: list[ApplicationWindow]
     application_fee: int | None
     specializations: list[str] | None = None
